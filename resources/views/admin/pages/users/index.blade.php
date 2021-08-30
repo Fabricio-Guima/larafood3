@@ -53,6 +53,8 @@
 								
 								<a href="{{ route('users.show', $user->id) }}" class="btn btn-warning">Ver</a>
 
+								<a href="{{ route('users.roles', $user->id) }}" title="Cargos" class="btn btn-warning"> <i class="fas fa-address-card"></i> </a>
+
 								
 							</td>
 						</tr>
