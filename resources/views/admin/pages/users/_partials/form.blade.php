@@ -2,12 +2,14 @@
 
 <div class="form-group">
 					<label for="name">Nome:</label>
-					<input type="text "name="name" class="form-control" placeholder="Nome" value="{{$user->name ?? old('name')}}">
+					<input type="text "name="name" class="form-control" placeholder="Nome" value="{{$category->name ?? old('name')}}">
 				</div>
 
 				<div class="form-group">
-					<label for="email">E-mail:</label>
-					<input type="email "name="email" class="form-control" placeholder="E-mail" value="{{$user->email ?? old('email')}}">
+					<label for="descripton">Descrição:</label>
+					<textarea name="description" id="" cols="30" rows="5" class="form-control">
+						{{$category->description ?? old('description')}}
+					</textarea>
 				</div>
 
 				<div class="form-group">

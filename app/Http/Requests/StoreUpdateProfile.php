@@ -23,20 +23,7 @@ class StoreUpdateProfile extends FormRequest
      */
     public function rules()
     {
-
-        //criar execeção para eu poder enviar o mesmo nome do perfil quando for atualizar algum perfil
-
-        //Pegando o segmento, ou seja, o campo id
-        //http://127.0.0.1:8000/admin/plans/plano-normal
-        // admin = segmento 1
-        //plans = segmento 2
-        //plano-normal 3       
-        // é contado assim
-
         $id = $this->segment(3);
-
-        //abra uma exceção para eu salvar o nome do pefil atual que é o mesmo que está no banco
-        //OBS: NAO DEIXE ESPAÇOS APÓS A VÍRGULA, SENAO DÁ MERDA
 
         return [
             'name' => "required|min:3|max:255|unique:profiles,name,{$id},id",

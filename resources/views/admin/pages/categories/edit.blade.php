@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar Usuário')
+@section('title', 'Editar Categoria')
 
 @section('content_header')
-    <h1>Editar Usuário <a href="{{route('users.index')}}" class="btn btn-dark">Voltar</a></h1>
+    <h1>Editar Categoria <a href="{{route('categories.index')}}" class="btn btn-dark">Voltar</a></h1>
 @stop
 
 @section('content')
@@ -12,24 +12,22 @@
 		
 		<div class="card-body">
 			
-			<form action="{{route('users.update', $user->id)}}" class="form" method="post">
+			<form action="{{route('categories.update', $category->id)}}" class="form" method="post">
 				@csrf
 				@method('PUT')
 
 				<div class="form-group">
 					<label for="name">Nome:</label>
-					<input type="text "name="name" class="form-control" placeholder="Nome" value="{{$user->name}}">
+					<input type="text "name="name" class="form-control" placeholder="Nome" value="{{$category->name}}">
 				</div>
 
 				<div class="form-group">
-					<label for="name">E-mail:</label>
-					<input type="email "name="email" class="form-control" placeholder="E-mail" value="{{$user->email}}">
+					<label for="name">Descrição:</label>
+				<textarea name="description" id="" cols="30" rows="5"  class="form-control">{{$category->description}}
+				</textarea>
 				</div>
 
-				<div class="form-group">
-					<label for="password">Senha:</label>
-					<input type="password "name="password" class="form-control" placeholder="Senha"">
-				</div>
+				
 				
 
 				<div class="form-group">

@@ -1,32 +1,32 @@
 @extends('adminlte::page')
 
-@section('title', 'Detalhe do Usuário')
+@section('title', 'Detalhe da Categoria')
 
 @section('content_header')
-    <h1>Detalhes do Usuário <a href="{{route('plans.index')}}" class="btn btn-dark">Voltar</a></h1>
+    <h1>Detalhes da Categoria <a href="{{route('categories.index')}}" class="btn btn-dark">Voltar</a></h1>
 @stop
 
 @section('content')
-<h1>Detalhes do  <b>{{$user->name}}</b></h1>
+<h1>Detalhes do  <b>{{$category->name}}</b></h1>
 @include('admin.includes.alerts')
    <div class="card">
 		
 		<div class="card-body">
 			<ul>
 				<li>
-					<strong>Nome:</strong> {{$user->name}}
+					<strong>Nome:</strong> {{$category->name}}
 				</li>
 				<li>
-					<strong>E-mail:</strong> {{$user->email}}
+					<strong>URL:</strong> {{$category->url}}
 				</li>
 				
 
 				<li>
-					<strong>Empresa:</strong> {{$user->tenant->name}}
+					<strong>Descrição:</strong> {{$category->description}}
 				</li>
 			</ul>
 
-			<form action="{{route('users.destroy', $user->id)}}" method="POST">
+			<form action="{{route('categories.destroy', $category->id)}}" method="POST">
 			<!-- Quando o método for delete, tenho que fazer dessa forma sempre -->
 				@csrf
 				@method('DELETE')

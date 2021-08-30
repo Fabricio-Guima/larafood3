@@ -18,6 +18,6 @@ class Tenant extends Model
    // retorna qual  plano o tenant tem cadastrado
    // uma empresa (tenant) só tem um plano
     public function  plan(){
-       return $this->belongsTo(Tenant::class);
+       return $this->belongsTo(Plan::class);
    }
 }
