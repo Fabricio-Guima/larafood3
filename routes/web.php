@@ -1,5 +1,16 @@
 <?php
 
+use App\Models\Client;
+
+Route::get('teste', function(){
+    $client = Client::first();
+
+    $token = $client->createToken('token-teste');
+
+    dd($token->plainTextToken);
+    
+});
+
 //ROTAS ADMIN DE PLANOS
 Route::prefix('admin')
         ->namespace('Admin')

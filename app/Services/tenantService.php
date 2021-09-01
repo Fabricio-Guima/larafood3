@@ -3,7 +3,7 @@
 namespace App\Services;
 
 use App\Models\Plan;
-use App\repositories\Contracts\TenantRepositoryInterface;
+use App\Repositories\Contracts\TenantRepositoryInterface;
 
 class TenantService {
 
