@@ -43,9 +43,14 @@
 					@foreach ($products as $product)
 						<tr>
 							<td>
-								<img width="100" src="{{url("storage/{$product->image}")}}" alt="">
+							  <img src="{{ url("storage/{$product->image}") }}" alt="{{ $product->name }}" style="max-width: 90px;">
 								
 							</td>
+
+							<td>
+								{{$product->image}}
+							</td>
+							
 							<td>
 								{{$product->name}}
 							</td>							
@@ -56,7 +61,6 @@
 								<a href="{{ route('products.edit',$product->id) }}" class="btn btn-info">Edit</a>
 								
 								<a href="{{ route('products.show', $product->id) }}" class="btn btn-warning">Ver</a>
-
 								
 							</td>
 						</tr>

@@ -77,6 +77,8 @@ class ProductController extends Controller
         if(!$product = $this->repository->find($id)){
             return redirect()->back();
         }
+
+        dd($product);
         
          return view('admin.pages.products.show',['product' => $product]);
     }
