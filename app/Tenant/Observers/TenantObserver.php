@@ -16,7 +16,9 @@ class TenantObserver {
     {
 		//em vez de instanciar, faço com app que dá o bind e devolve um objeto desta classe
 		$managerTenant= app(ManagerTenant::class);
+        $identify = $managerTenant->getTenantIdentify();
 
-        $model->tenant_id = $managerTenant->getTenantIdentify();
+        if($identify)
+            $model->tenant_id = $identify;
     }
 }

@@ -24,9 +24,7 @@ Route::group([
     Route::get('/tables/{identify}', 'TableApiController@show');
     Route::get('/tables', 'TableApiController@tablesByTenant');
     
-    Route::get('/products/{identify}', function (){
-        return response()->json(['msg' => 'teste']);
-    });
+    Route::get('/products/{identify}', 'ProductApiController@show');
     Route::get('/products', 'ProductApiController@productsByTenant');
     
     Route::post('/client', 'Auth\RegisterController@store');
@@ -34,4 +32,5 @@ Route::group([
     
     Route::post('/orders', 'OrderApiController@store');
     Route::get('/orders/{identify}', 'OrderApiController@show');
+  
 });

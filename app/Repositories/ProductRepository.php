@@ -25,7 +25,8 @@ class ProductRepository implements ProductRepositoryInterface
                     ->where(function ($query) use ($categories) {
                         if ($categories != [])
                             $query->whereIn('categories.uuid', $categories);
-                    })                   
+                    }) 
+                    ->select('products.*')                  
                     ->get();
     }
 

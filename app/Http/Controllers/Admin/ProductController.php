@@ -57,7 +57,7 @@ class ProductController extends Controller
         $tenant = auth()->user()->tenant;
 
         if ($request->hasFile('image') && $request->image->isValid()) {
-            $data['image'] = $request->image->store("tenants/{$tenant->uuid}/products");
+            $data['image'] = $request->image->store("/products");
         }
 
         $this->repository->create($data);
@@ -78,7 +78,7 @@ class ProductController extends Controller
             return redirect()->back();
         }
 
-        dd($product);
+       
         
          return view('admin.pages.products.show',['product' => $product]);
     }
@@ -110,7 +110,7 @@ class ProductController extends Controller
     public function update(StoreUpdateProduct $request, $id)
     {
          if(!$product = $this->repository->find($id)){
-             dd('to aqui');
+           
             return redirect()->back();
         }
 

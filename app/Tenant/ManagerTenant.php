@@ -8,12 +8,12 @@ class ManagerTenant {
 
 	public function getTenantIdentify(): int{
 
-		return auth()->user()->tenant_id;
+		return auth()->check() ? auth()->user()->tenant_id : '';
 	}
 
 	public function getTenant(): Tenant {
 
-		return auth()->user()->tenant;
+		return auth()->check() ? auth()->user()->tenant : '';
 	}
 
 	public function isAdmin(): bool {

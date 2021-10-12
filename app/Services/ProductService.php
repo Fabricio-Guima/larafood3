@@ -26,7 +26,7 @@ class ProductService
 
     public function getProductByUuid(string $uuid)
     {
-        return $this->productRepository->getProductByUrl($uuid);
+        return $this->productRepository->getProductByUuid($uuid);
     }
 
 }
